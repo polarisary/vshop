@@ -707,6 +707,10 @@ img[src="assets/images/blank.gif"] {
   background-color: #f9f9f9;
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 0 9px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:  99;
 }
 .top-bar ul {
   list-style: none;
@@ -1308,9 +1312,10 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .breadcrumb-nav-holder .breadcrumb-item.open > a,
 .breadcrumb-nav-holder .breadcrumb-item:focus > a,
-.breadcrumb-nav-holder .breadcrumb-item:hover > a {
+/* 取消面包屑导航底部背景 By:BING */
+/*.breadcrumb-nav-holder .breadcrumb-item:hover > a {
   background-color: #ececec;
-}
+}*/
 .breadcrumb-nav-holder .breadcrumb-item:before,
 .breadcrumb-nav-holder .breadcrumb-item:after {
   content: "";
@@ -2920,7 +2925,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   margin: 23px 0;
 }
 #products-tab {
-  margin: 50px 0 20px 0;
+  margin: 50px 0 65px 0;
 }
 #products-tab .image {
   min-height: 215px;
@@ -4337,7 +4342,10 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 /*  Footer
 /*===================================================================================*/
 #footer {
-  padding: 54px 0 0 0;
+  padding: 0px 0 0 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 #footer h2 {
   text-transform: capitalize;
@@ -4470,6 +4478,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 #footer .copyright-bar .copyright {
   line-height: 30px;
   color: #8a8a8a;
+  text-align: center;
 }
 #footer .copyright-bar .copyright a {
   color: #fff;
@@ -4964,3 +4973,23 @@ select.top-drop-menu {
     display: block;
   }
 }
+
+/*规格选择*/
+.des_choice{
+    line-height:40px; overflow:hidden; color:#888888; font-family:"宋体";
+}
+.des_choice ul li{
+    height:28px; line-height:28px; overflow:hidden; font-size:14px; text-align:center; font-family:"Microsoft YaHei"; float:left; display:inline; margin-right:10px; margin-top:4px; margin-bottom:2px; padding:0 15px; border:1px solid #cccccc; cursor:pointer; position:relative;
+}
+.des_choice ul li:hover{
+    height:26px; line-height:26px; padding:0 14px; overflow:hidden; border:2px solid #ff4e00;
+}
+.des_choice ul li .ch_img{
+    width:18px; height:18px; overflow:hidden; background:url(../images/ch.png) no-repeat center top; position:absolute; right:0; bottom:0; display:none;
+}
+.des_choice ul li.checked{
+    height:26px; line-height:26px; padding:0 14px; overflow:hidden; border:2px solid #ff4e00;
+}
+.des_choice ul li.checked .ch_img{
+    display:block;
+}  

@@ -276,12 +276,13 @@
     /*===================================================================================*/
     /*  SHARE THIS BUTTONS
     /*===================================================================================*/
-
+    /* 注销分享按钮
     $(document).ready(function () {
         if($('.social-row').length > 0){
             stLight.options({publisher: "2512508a-5f0b-47c2-b42d-bde4413cb7d8", doNotHash: false, doNotCopy: false, hashAddressBar: false});
         }
     });
+    /*
 
     /*===================================================================================*/
     /*  CUSTOM CONTROLS
@@ -312,12 +313,12 @@
         // Quantity Spinner
         $('.le-quantity a').click(function(e){
             e.preventDefault();
-            var currentQty= $(this).parent().parent().find('input[name=productnum]').val();
+            var currentQty= $(this).parent().parent().find('input').val();
             if( $(this).hasClass('minus') && currentQty>0){
-                $(this).parent().parent().find('input[name=productnum]').val(parseInt(currentQty, 10) - 1);
+                $(this).parent().parent().find('input').val(parseInt(currentQty, 10) - 1);
             }else{
                 if( $(this).hasClass('plus')){
-                    $(this).parent().parent().find('input[name=productnum]').val(parseInt(currentQty, 10) + 1);
+                    $(this).parent().parent().find('input').val(parseInt(currentQty, 10) + 1);
                 }
             }
         });
