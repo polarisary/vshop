@@ -7,15 +7,13 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use Yii;
 
-class VideoController extends \yii\web\Controller
+class TestController extends \yii\web\Controller
 {
     public $defaultAction = 'index';
     public function actionIndex()
     {
-    	$this->layout = "main";
-        return $this->render('index',[
-            'api' => Yii::$app->params['api'],
-        ]);
+        $this->layout = "main2";
+        return $this->render('index');
     }
 
     public function actionVideo($index){

@@ -1,7 +1,5 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
-
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -16,26 +14,14 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.163.com',
-                'username' => 'imooc_shop@163.com',
-                'password' => 'imooc123',
-                'port' => '465',
-                'encryption' => 'ssl',
-            ],
-
-        ],
+        // 'user' => [
+        //     'identityClass' => 'app\models\User',
+        //     'enableAutoLogin' => true,
+        // ],
+        // 'errorHandler' => [
+        //     'errorAction' => 'site/error',
+        // ],
+        
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -63,7 +49,7 @@ $config = [
             // 'baseUrl'=>'http://style.exemple.com/style/assets',  
         ),
     ],
-    'params' => $params,
+    'params' => require(__DIR__ . '/params.php'),
 ];
 
 if (YII_ENV_DEV) {

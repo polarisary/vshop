@@ -1,52 +1,17 @@
-<link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
 <style>
 
-    .box { position: relative; float: left; width: 300px}
-    .content { padding: 5px; border: 0px solid #ccc; border-radius: 2px; }
-    #container { background: #fff none repeat scroll 0 0;  margin: 0 auto; width: 1800px; }
-    .vjs-paused .vjs-big-play-button,
-    .vjs-paused.vjs-has-started .vjs-big-play-button {
-        display: block;
-    }
-    .video-js .vjs-big-play-button{
-        font-size: 2.5em;
-        line-height: 2.3em;
-        height: 2.5em;
-        width: 2.5em;
-        -webkit-border-radius: 2.5em;
-        -moz-border-radius: 2.5em;
-        border-radius: 2.5em;
-        background-color: #73859f;
-        background-color: rgba(115,133,159,.5);
-        border-width: 0.1em;
-        margin-top: -1.25em;
-        margin-left: -1.75em;
-    }
-    /* 中间的播放箭头 */
-    .vjs-big-play-button .vjs-icon-placeholder {
-        font-size: 1.63em;
-    }
-    /* 加载圆圈 */
-    .vjs-loading-spinner {
-        font-size: 2.5em;
-        width: 2em;
-        height: 2em;
-        border-radius: 1em;
-        margin-top: -1em;
-        margin-left: -1.5em;
-    }
+.box { position: relative; float: left; width: 300px}
+.content { padding: 5px; border: 0px solid #ccc; border-radius: 2px; }
+#container { background: #fff none repeat scroll 0 0;  margin: 0 auto; width: 1800px; }
+
 </style>
-
-
-<div id="container">
-<script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
-</div>
+<div id="container"></div>
 <script type="text/javascript">
 var MAX_IDX = 0;
 var BEF_IDX = 0;
 window.onload = function () {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:18686/video/video?index=" + MAX_IDX, true);
+    xhr.open("GET", '<?= $api ?>' + MAX_IDX, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             var resultObj = JSON.parse(xhr.responseText);
@@ -63,7 +28,7 @@ window.onscroll = function () {
         if(BEF_IDX == MAX_IDX)
             return;
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost:18686/video/video?index=" + MAX_IDX, true);
+        xhr.open("GET", '<?= $api ?>' + MAX_IDX, true);
         // console.log("get data index:" + MAX_IDX);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
@@ -98,7 +63,6 @@ function waterFall(data){
         video.setAttribute("controls", "controls");
         video.setAttribute("width", "100%");
         video.setAttribute("id", data[i].id);
-        video.setAttribute("class", "video-js vjs-big-play-centered");
         video.onclick = function(event){
             if(event.currentTarget.paused) {
                 pauseAll();
