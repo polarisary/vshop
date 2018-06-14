@@ -68,7 +68,7 @@
         <div class="container">
             <div class="no-margin">
                 <div class="copyright">
-                    &copy; <a href="#">11th Street Center</a> - all rights reserved
+                    &copy; <a href="#">7th Street Center</a> - all rights reserved
                 </div><!-- /.copyright -->
             </div>
                 <!-- <div class="col-xs-12 col-sm-6 no-margin">
