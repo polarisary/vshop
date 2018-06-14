@@ -10,7 +10,7 @@
         <meta name="keywords" content="11th Street Center">
         <meta name="robots" content="all">
 
-        <title>11th Street Center</title>
+        <title>7th Street Center</title>
 
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
